@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+# cloud-init-output.log에 진행 상황이 남는다. 비밀값은 포함하지 않는다.
+for attempt in 1 2 3 4 5; do
+  if dnf install -y nginx; then break; fi
+  if [ "$attempt" -eq 5 ]; then exit 1; fi
+  sleep 10
+done
+install -d -m 0755 /usr/share/nginx/html
+printf '%s' '${html_b64}' | base64 --decode > /usr/share/nginx/html/index.html
+printf '%s' '${nginx_b64}' | base64 --decode > /etc/nginx/nginx.conf
+nginx -t
+systemctl enable --now nginx
+curl --fail --max-time 10 http://localhost/
+curl --fail --max-time 10 http://localhost/health
+curl --fail --max-time 20 https://example.com > /var/log/b3-1-outbound.html
