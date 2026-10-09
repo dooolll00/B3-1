@@ -564,3 +564,10 @@
 - 커밋 메시지: docs: complete B3-1 AWS mission and cleanup evidence.
 - push: 아래 커밋 후 origin/main에 실행 예정이며 실제 결과는 후속 기록으로 남김.
 - 다음: 업로드 결과 확인 및 과제 제출. AWS 자원 변경 없음.
+
+## 2026-10-09 — 업로드 시도 결과
+
+- 실습 제출 변경 커밋: 6e0760e, docs: complete B3-1 AWS mission and cleanup evidence.
+- push 실패: HTTPS GitHub 사용자 인증을 읽을 수 없음(could not read Username / Device not configured). gh 명령 미설치, Git credential helper는 osxkeychain. 인증 정보 출력·변경 없음.
+- 현재: 제출 변경은 로컬 커밋 완료, GitHub 업로드 미완료. 이 결과 기록도 별도 로컬 커밋으로 보관.
+- 다음: 사용자가 GitHub 인증 가능한 터미널 또는 IDE에서 main을 push. AWS 변경 없음.
