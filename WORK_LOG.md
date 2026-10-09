@@ -571,3 +571,12 @@
 - push 실패: HTTPS GitHub 사용자 인증을 읽을 수 없음(could not read Username / Device not configured). gh 명령 미설치, Git credential helper는 osxkeychain. 인증 정보 출력·변경 없음.
 - 현재: 제출 변경은 로컬 커밋 완료, GitHub 업로드 미완료. 이 결과 기록도 별도 로컬 커밋으로 보관.
 - 다음: 사용자가 GitHub 인증 가능한 터미널 또는 IDE에서 main을 push. AWS 변경 없음.
+
+## 2026-10-09 21:06 KST — GitHub 업로드 상태 갱신 및 최종 링크 점검
+
+- 요청: main push 완료 사실을 README에 반영하고 IAM 최소권한 검증 한계를 유지하며 요구사항·증빙 링크 최종 확인. 사진·AWS 자원 변경 금지.
+- 변경: README.md, WORK_LOG.md.
+- 확인: git fetch origin 성공 및 HEAD...origin/main 차이 0/0. origin/main에 e43ed95까지 반영되어 이전 인증 실패 이후 기존 제출 변경 업로드 완료 확인.
+- 작업: README 상단·후속 관리의 업로드 미완료 표현을 완료로 변경. 과제 제출 및 이번 새 문서 변경의 commit/push와 구분. IAM 기본 버전 본문 일치·유효 권한 전체의 최소권한은 검증하지 않았음을 명시.
+- 검증: 필수 파일 존재, 모든 Markdown 로컬 링크 정상, PNG 증빙 25장 README 참조, 정책 JSON 구문 정상, git diff --check 통과. 구성도와 증빙 PNG 전체를 HEAD 바이트와 대조하여 변경 없음 확인.
+- 미해결·다음: 이번 문서 수정은 아직 commit/push하지 않음. 과제 제출 여부 별도 확인, 월 최종 Billing 후속 확인. AWS 조회·변경 없음.
